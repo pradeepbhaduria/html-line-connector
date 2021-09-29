@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Elements } from "./Elements";
+import { ConnectLine } from "./connect-line/Connector";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Connect Divs</h1>
       </header>
+      <Elements />
+      <ConnectLine
+        from={[
+          { id: "element-1", text: "2" },
+          { id: "element-2", text: "5" },
+        ]}
+        to={[{ id: "element-3" }, { id: "element-4" }]}
+        parentSelector=".tasks-container"
+      />
     </div>
   );
 }
